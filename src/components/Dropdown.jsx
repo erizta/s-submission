@@ -1,5 +1,4 @@
 import { useState } from "react";
-// components
 import Dropdown from "react-bootstrap/Dropdown";
 
 const DropdownFilter = ({ filterData }) => {
@@ -12,17 +11,17 @@ const DropdownFilter = ({ filterData }) => {
 
   return (
     <Dropdown>
-      <div>
+      <div data-cy="todo-sort-button">
         <Dropdown.Toggle className="text-xl text-gray-400 my-8 px-3 py-2 mx-2 rounded-full border-sodivd border-gray-300 border hover:bg-transparent hover:text-gray-400 ">
           <i className="bx bx-sort-alt-2 text-2xl"></i>
         </Dropdown.Toggle>
       </div>
 
       <Dropdown.Menu className="w-64">
-        <Dropdown.Item data-index="0">
+        <Dropdown.Item data-cy="sort-selection" data-index="0">
           <div
             onClick={() => changeFilter("sort-latest")}
-            
+            data-cy="sort-latest"
             className="hover:cursor-pointer  hover:rounded-md"
           >
             <div className="flex  items-center justify-between ">
@@ -39,10 +38,10 @@ const DropdownFilter = ({ filterData }) => {
           </div>
         </Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item  data-index="1">
+        <Dropdown.Item data-cy="sort-selection" data-index="1">
           <div
             onClick={() => changeFilter("sort-oldest")}
-            
+            data-cy="sort-oldest"
             className="hover:cursor-pointer hover:rounded-md"
           >
             <div className="flex  items-center justify-between ">
@@ -60,7 +59,7 @@ const DropdownFilter = ({ filterData }) => {
           </div>
         </Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item  data-index="2">
+        <Dropdown.Item data-cy="sort-selection" data-index="2">
           <div
             onClick={() => changeFilter("sort-az")}
             data-cy="sort-az"
@@ -80,7 +79,7 @@ const DropdownFilter = ({ filterData }) => {
           </div>
         </Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item data-index="3">
+        <Dropdown.Item data-cy="sort-selection" data-index="3">
           <div
             onClick={() => changeFilter("sort-za")}
             data-cy="sort-za"
@@ -100,7 +99,7 @@ const DropdownFilter = ({ filterData }) => {
           </div>
         </Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item data-index="4">
+        <Dropdown.Item data-cy="sort-selection" data-index="4">
           <div
             onClick={() => changeFilter("sort-unfinished")}
             data-cy="sort-unfinished"

@@ -78,10 +78,10 @@ const FormModal = ({
   };
 
   return (
-    <div>
+    <div data-cy="modal-add">
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Header closeButton>
-          <div>
+          <div data-cy="modal-add-title">
             <Modal.Title className="text-lg font-bold">
               {type === "add" ? "Tambah" : "Edit"} Item List
             </Modal.Title>
@@ -90,10 +90,10 @@ const FormModal = ({
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <div>
+              <div data-cy="modal-add-name-title">
                 <Form.Label>Nama List Item</Form.Label>
               </div>
-              <div>
+              <div data-cy="modal-add-name-input">
                 <Form.Control
                   ref={titleInput}
                   defaultValue={edit === undefined ? title : edit.title}
@@ -107,7 +107,7 @@ const FormModal = ({
               className="mb-3 w-44"
               controlId="exampleForm.ControlInput1"
             >
-              <div>
+              <div data-cy="modal-add-priority-title">
                 <Form.Label>Priority</Form.Label>
               </div>
 
@@ -116,6 +116,7 @@ const FormModal = ({
                   onClick={() => {
                     showDropdown();
                   }}
+                  data-cy="modal-add-priority-dropdown"
                   className="bg-white  flex flex-col p-2 border  border-gray-300 rounded-xl w-52"
                 >
                   <div className="flex py-2 px-2 items-center justify-between w-full">
@@ -168,6 +169,7 @@ const FormModal = ({
                   onClick={() => {
                     changeDropdown("very-high");
                   }}
+                  data-cy="modal-add-priority-item"
                   className="bg-white  flex flex-col p-2 shadow-xl cursor-pointer w-52 border-b border-b-gray-200"
                 >
                   <div className="flex py-2 px-2 items-center justify-between w-full">
@@ -181,6 +183,7 @@ const FormModal = ({
                   onClick={() => {
                     changeDropdown("high");
                   }}
+                  data-cy="modal-add-priority-item"
                   className="bg-white  flex flex-col p-2 shadow-xl cursor-pointer w-52 border-b border-b-gray-200"
                 >
                   <div className="flex py-2 px-2 items-center justify-between w-full">
@@ -193,6 +196,7 @@ const FormModal = ({
                   onClick={() => {
                     changeDropdown("normal");
                   }}
+                  data-cy="modal-add-priority-item"
                   className="bg-white  flex flex-col p-2 shadow-xl cursor-pointer w-52 border-b border-b-gray-200"
                 >
                   <div className="flex py-2 px-2 items-center justify-between w-full">
@@ -206,6 +210,7 @@ const FormModal = ({
                   onClick={() => {
                     changeDropdown("low");
                   }}
+                  data-cy="modal-add-priority-item"
                   className="bg-white  flex flex-col p-2 shadow-xl cursor-pointer w-52 border-b border-b-gray-200"
                 >
                   <div className="flex py-2 px-2 items-center justify-between w-full">
@@ -218,6 +223,7 @@ const FormModal = ({
                   onClick={() => {
                     changeDropdown("very-low");
                   }}
+                  data-cy="modal-add-priority-item"
                   className="bg-white  flex flex-col p-2 shadow-xl cursor-pointer w-52 border-b border-b-gray-200"
                 >
                   <div className="flex py-2 px-2 items-center justify-between w-full">
@@ -238,6 +244,7 @@ const FormModal = ({
             </div>
           ) : (
             <button
+              data-cy="modal-add-save-button"
               onClick={() => handleSubmit()}
               className="font-bold text-lg main-color py-3 px-10 rounded-full text-white disabled:opacity-50"
               disabled={

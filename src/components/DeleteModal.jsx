@@ -35,7 +35,7 @@ const DeleteModal = ({ deleteData, handleClose, show, item, type }) => {
 
   return (
     <>
-      <div>
+      <div data-cy="modal-delete">
         <Modal
           show={show}
           onHide={handleClose}
@@ -45,6 +45,7 @@ const DeleteModal = ({ deleteData, handleClose, show, item, type }) => {
         >
           <Modal.Body className="flex flex-col justify-center items-center text-center">
             <svg
+              data-cy="modal-delete-icon"
               width="84"
               height="84"
               viewBox="0 0 84 84"
@@ -66,18 +67,21 @@ const DeleteModal = ({ deleteData, handleClose, show, item, type }) => {
                 strokeLinejoin="round"
               />
             </svg>
-            <h1 className="text-lg my-14">
-              Apakah anda yakin menghapus List Item
+            <h1 data-cy="modal-delete-title" className="text-lg my-14">
+              Apakah anda yakin menghapus List Item{" "}
               <p className="font-extrabold">"{item.title}"?</p>
             </h1>
             <div className="flex w-full justify-center">
               <button
+                data-cy="modal-delete-cancel-button"
                 onClick={handleClose}
                 className="font-bold text-lg bg-gray-100 mx-2 py-3 px-10 rounded-full text-black"
               >
+                {" "}
                 Batal
               </button>
               <button
+                data-cy="modal-delete-confirm-button"
                 onClick={() => {
                   handleDelete();
                 }}
@@ -93,7 +97,7 @@ const DeleteModal = ({ deleteData, handleClose, show, item, type }) => {
             </div>
           </Modal.Body>
         </Modal>
-        <div>
+        <div data-cy="modal-information">
           <Modal
             show={alert}
             onHide={handleCloseAlert}
@@ -102,8 +106,13 @@ const DeleteModal = ({ deleteData, handleClose, show, item, type }) => {
             centered
           >
             <div className="flex justify-center items-center text-center h-16">
-              <i className="bx bx-info-circle text-green-600 px-2"></i>
-              <p className="text-lg my-14">Activity Berhasil dihapus</p>
+              <i
+                data-cy="modal-information-icon"
+                className="bx bx-info-circle text-green-600 px-2"
+              ></i>
+              <p data-cy="modal-information-title" className="text-lg my-14">
+                Activity Berhasil dihapus
+              </p>
             </div>
           </Modal>
         </div>

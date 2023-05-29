@@ -141,12 +141,12 @@ const Activity = () => {
       <div className="container flex flex-col">
         <div className="flex justify-between">
           <div className="flex items-center ml-20">
-            <div>
+            <div data-cy="todo-back-button">
               <Link to="/" className="pr-5 text-4xl text-black">
                 <i className="bx bxs-chevron-left"></i>
               </Link>
             </div>
-            <div>
+            <div data-cy="todo-title">
               {editTitle ? (
                 <input
                   ref={titleInput}
@@ -168,7 +168,7 @@ const Activity = () => {
               )}
             </div>
 
-            <div>
+            <div data-cy="todo-title-edit-button">
               <button
                 className="text-xl text-gray-400"
                 onClick={handleEditTitle}
@@ -181,7 +181,7 @@ const Activity = () => {
             <p className="my-1">
               <DropdownFilter filterData={filterData}></DropdownFilter>
             </p>
-            <div>
+            <div data-cy="todo-add-button">
               <button
                 onClick={() => handleShow("add")}
                 className="font-bold text-lg main-color my-8 py-3 px-10 rounded-full text-white before:content-['+'] before:text-xl"
@@ -192,7 +192,7 @@ const Activity = () => {
           </div>
         </div>
         {todos.length === 0 ? (
-          <div
+          <div data-cy="todo-empty-state"
             className="flex justify-center hover:cursor-pointer"
             onClick={() => {
               handleShow("add");
@@ -240,12 +240,12 @@ const Activity = () => {
                   }
                 })
                 .map((item, key) => (
-                  <div
+                  <div data-cy="todo-item-1"
                     key={key}
                     className="flex justify-between w-full p-5 bg-white rounded-lg shadow-xl text-start"
                   >
                     <div className="flex items-center">
-                      <input
+                      <input data-cy="todo-item-checkbox"
                         onChange={() => {
                           handleCheck(item);
                         }}
@@ -253,7 +253,7 @@ const Activity = () => {
                         type="checkbox"
                         className="w-4 h-4 ml-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                       />
-                      <div
+                      <div data-cy="todo-item-priority-indicator"
                         className={
                           item.priority === "very-high"
                             ? "ml-5 w-2 h-2 rounded-full very-high"
@@ -266,7 +266,7 @@ const Activity = () => {
                             : "ml-5 w-2 h-2 rounded-full very-low"
                         }
                       ></div>
-                      <h2
+                      <h2 data-cy="todo-item-title"
                         className={
                           !item.is_active
                             ? "line-through ml-5 font-bold text-lg text-gray-400"
@@ -275,7 +275,7 @@ const Activity = () => {
                       >
                         {item.title}
                       </h2>
-                      <div>
+                      <div data-cy="todo-item-edit-button">
                         <button
                           onClick={() => handleShow("edit", item)}
                           className="ml-5 text-xl text-gray-400"
@@ -285,7 +285,7 @@ const Activity = () => {
                       </div>
                     </div>
                     <div className="flex">
-                      <div>
+                      <div data-cy="todo-item-delete-button">
                         <button
                           onClick={() => handleShowDelete(item)}
                           className="ml-5 text-xl text-gray-400"
