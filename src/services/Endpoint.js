@@ -1,7 +1,7 @@
 import http from "./Base";
 
 const getAllActivity = () =>
-  http.get(`/activity-groups?email=${process.env.REACT_APP_EMAIL}`);
+  http.get(`/activity-groups?email=eriztaalifad@gmail.com`);
 const getDetail = (id) => http.get("/activity-groups/" + id);
 const createActivity = (data) =>
   http.post("/activity-groups", JSON.stringify(data), {

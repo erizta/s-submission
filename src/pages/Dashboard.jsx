@@ -26,7 +26,7 @@ const Dashboard = () => {
     try {
       const res = await Endpoint.createActivity({
         title: "New Activity",
-        email: process.env.REACT_APP_EMAIL,
+        email: 'eriztaalifad@gmail.com',
       });
       setProcess(false);
       getActivities();
