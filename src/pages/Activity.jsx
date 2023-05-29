@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
@@ -177,13 +178,14 @@ const Activity = () => {
             </div>
           </div>
           <div className="flex">
-            <DropdownFilter filterData={filterData}></DropdownFilter>
+            <p className="my-1">
+              <DropdownFilter filterData={filterData}></DropdownFilter>
+            </p>
             <div>
               <button
                 onClick={() => handleShow("add")}
                 className="font-bold text-lg main-color my-8 py-3 px-10 rounded-full text-white before:content-['+'] before:text-xl"
               >
-                {" "}
                 Tambah
               </button>
             </div>
@@ -199,11 +201,12 @@ const Activity = () => {
             <img src={image} alt="Todo Empty State" loading="lazy" />
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-2 mx-20">
             {onLoad ? (
               <Spinner animation="border" variant="primary" />
             ) : (
               todos
+                // eslint-disable-next-line array-callback-return
                 .sort((a, b) => {
                   switch (filterType) {
                     case "sort-latest":
