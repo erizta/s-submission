@@ -1,3 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+@import url('bootstrap/dist/css/bootstrap.min.css');
+
+* {
+  font-family: 'Poppins';
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +22,28 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.main-color {
+  background: #16ABF8;
+}
+
+.very-high {
+  background-color: #ED4C5C
+}
+
+.high {
+  background-color: #F8A541
+}
+
+.medium {
+  background-color: #00A790
+}
+
+.low {
+  background-color: #428BC1
+}
+
+.very-low {
+  background-color: #8942C1
 }
